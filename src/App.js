@@ -1,23 +1,15 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Main from './Components/Main';  // Importing the Main component
+import DownloadButton from './Components/DownloadButton'; // Importing the DownloadButton component
+ // Importing the QRCode component
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Main />
+     
+      <DownloadButton targetId="business-card" /> {/* Button to download the business card */}
     </div>
   );
 }

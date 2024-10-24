@@ -5,9 +5,182 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7fa;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header-curve{
+  border-radius:0 0 50% 50%;
+  background-color: #80c5ef;
+}
+
+.custom-container{
+  min-height: 400px;
+  background-color: aquamarine;
+  max-width:550px;
+}
+
+/* About Component */
+.name {
+  font-size: 5rem;
+  color: #278eb1;
+  display: inline-block;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
+
+.name span {
+  opacity: 0;
+  display: inline-block;
+  animation: typewriter-glow 0.8s forwards;
+  animation-delay: calc(0.001s * var(--i));
+}
+
+@keyframes typewriter-glow {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+/* ContactInfo Componenet*/
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.contact-icon {
+  font-size: 4rem; 
+  color: #032236; 
+  transition: color 0.3s ease; 
+}
+
+/* Hover effect to change color on icons */
+.contact-icon:hover {
+  color: #0077b5; 
+}
+
+@media (max-width: 768px) {
+  .contact-icon {
+    font-size: 3rem;
+  }
+}
+
+
+
+/*QR CODE Page*/
+
+.qr-code-container {
+  position: fixed; 
+  bottom: 20px;    
+  right: 20px;   
+  z-index: 1000;   
+  text-align: center; 
+}
+
+.qr-code-icon {
+  font-size: 40px; 
+  color: #333;     
+  cursor: pointer;
+}
+.qr-code {
+  width: 20rem;     
+  height: auto;      
+  margin-top: 10px; 
+  border-radius: 8px;
+  display: block;    
+  z-index: 10000;   
+  max-width: 100%;   
+  position: relative;
+  background-color: #e8dada;
+}
+
+
+.qr-code-icon:hover{
+  color:rgb(5, 99, 153);
+}
+
+
+/* Dowload Button Component*/
+
+.download-icon {
+  position: fixed; 
+  bottom: 20px; 
+  left: 20px;
+  background-color: #03213f;
+  border-radius: 50%; 
+  padding: 10px; 
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  transition: background-color 0.3s; 
+}
+
+.download-icon:hover {
+  background-color: #0056b3;
+}
+
+/*profile picture Componenet*/
+
+ .profile-pic-container {
+  width: 100%;
+  height: auto; 
+  border-radius: 50%; 
+  overflow:hidden; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+} 
+
+.profile-pic{
+
+    object-fit:contain; 
+    width:25rem;
+    height: 15rem;
+    z-index: 1000;
+    margin-top: 15px;
+
+}
+
+
+
+@media (max-width: 768px) {
+  .profile-pic{
+    min-width:10rem;
+    min-height:5rem;
+  }
+  .name{
+    font-size:2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-pic{
+    /* min-width:5rem;
+    min-height:1rem; */
+    margin-top: 35px;
+  }
+  .name{
+    font-size:2rem;
+  }
+  .qr-code-container{
+    z-index:0;
+    position:static;
+  }
+  .download-icon{
+    position: static;
+    margin: auto;
+    padding:10px;
+    width:fit-content;
+    margin-top: 1rem;
+  }
+}
+
